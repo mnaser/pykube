@@ -1,6 +1,7 @@
 import copy
 import json
 import os.path as op
+import posixpath
 from inspect import getmro
 from typing import Optional
 from typing import Type
@@ -95,7 +96,7 @@ class APIObject:
             kw["url"] = self.endpoint
         else:
             operation = kwargs.pop("operation", "")
-            kw["url"] = op.normpath(op.join(self.endpoint, self.name, operation))
+            kw["url"] = posixpath.join(self.endpoint, self.name, operation)
         params = kwargs.pop("params", None)
         if params is not None:
             query_string = urlencode(params)

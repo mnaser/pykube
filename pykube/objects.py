@@ -1,6 +1,5 @@
 import copy
 import json
-import os.path as op
 import posixpath
 from inspect import getmro
 from typing import Optional

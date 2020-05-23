@@ -147,7 +147,7 @@ class APIObject:
         r = self.api.patch(
             **self.api_kwargs(
                 subresource=subresource,
-                headers={"Content-Type": "application/merge-patch+json"},
+                headers={"Content-Type": "application/strategic-merge-patch+json"},
                 data=json.dumps(strategic_merge_patch),
             )
         )
